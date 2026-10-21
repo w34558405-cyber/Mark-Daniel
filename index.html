@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Online resume and academic portfolio of Mark Daniel M. Medina, Civil Engineering student." />
+  <title>Mark Daniel M. Medina | Civil Engineering Student</title>
+  <style>
+    :root {
+      --navy: #17324d;
+      --navy-2: #234c6d;
+      --ink: #1e2935;
+      --muted: #617181;
+      --paper: #ffffff;
+      --soft: #eef3f7;
+      --line: #dce4eb;
+      --accent: #79b6d2;
+    }
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0; background: #f4f7fa; color: var(--ink);
+      font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      line-height: 1.6;
+    }
+    a { color: inherit; }
+    .wrap { width: min(1080px, calc(100% - 36px)); margin: 0 auto; }
+    header {
+      background: linear-gradient(135deg, var(--navy), #102538);
+      color: white; padding: 22px 0 76px; position: relative; overflow: hidden;
+    }
+    header::after {
+      content: ""; position: absolute; width: 340px; height: 340px; border: 1px solid rgba(255,255,255,.13);
+      border-radius: 50%; right: -80px; top: -120px; box-shadow: 0 0 0 35px rgba(255,255,255,.035), 0 0 0 70px rgba(255,255,255,.025);
+    }
+    nav { display: flex; justify-content: space-between; align-items: center; gap: 18px; position: relative; z-index: 1; }
+    .brand { font-weight: 800; letter-spacing: .04em; font-size: .94rem; }
+    .navlinks { display: flex; flex-wrap: wrap; gap: 20px; }
+    .navlinks a { color: #e4edf5; text-decoration: none; font-size: .9rem; }
+    .navlinks a:hover { color: white; text-decoration: underline; }
+    .hero { position: relative; z-index: 1; padding-top: 66px; max-width: 760px; }
+    .eyebrow { text-transform: uppercase; letter-spacing: .18em; font-size: .75rem; font-weight: 800; color: #9fd1e7; }
+    h1 { font-size: clamp(2.2rem, 6vw, 4.4rem); line-height: 1.05; margin: 13px 0 14px; letter-spacing: -.045em; }
+    .hero p { color: #dce7f0; font-size: 1.1rem; max-width: 650px; margin: 0 0 24px; }
+    .actions { display: flex; flex-wrap: wrap; gap: 12px; }
+    .btn { display: inline-flex; align-items: center; justify-content: center; padding: 11px 17px; border-radius: 10px; font-weight: 750; text-decoration: none; border: 1px solid transparent; }
+    .btn-light { background: white; color: var(--navy); }
+    .btn-outline { color: white; border-color: rgba(255,255,255,.45); }
+    .btn:hover { transform: translateY(-1px); }
+    main { margin-top: -36px; position: relative; z-index: 2; padding-bottom: 52px; }
+    .layout { display: grid; grid-template-columns: 1.65fr 1fr; gap: 22px; align-items: start; }
+    .card { background: var(--paper); border: 1px solid var(--line); border-radius: 18px; padding: 27px; box-shadow: 0 12px 35px rgba(23,50,77,.055); }
+    .card + .card { margin-top: 22px; }
+    .section-title { display: flex; align-items: center; gap: 11px; margin: 0 0 17px; color: var(--navy); font-size: 1.18rem; }
+    .section-title::before { content: ""; width: 5px; height: 22px; border-radius: 4px; background: var(--accent); }
+    .muted { color: var(--muted); }
+    .school { font-weight: 800; margin-bottom: 3px; }
+    .taglist { display: flex; flex-wrap: wrap; gap: 9px; }
+    .tag { background: var(--soft); color: var(--navy); border: 1px solid #dbe5ed; border-radius: 999px; padding: 7px 12px; font-size: .88rem; font-weight: 750; }
+    .project { padding: 0 0 17px; margin-bottom: 17px; border-bottom: 1px solid var(--line); }
+    .project:last-child { border-bottom: 0; padding-bottom: 0; margin-bottom: 0; }
+    .project h3 { margin: 0 0 5px; font-size: 1rem; color: var(--ink); }
+    .project p, .card p { margin-top: 0; }
+    ul { padding-left: 20px; margin-bottom: 0; }
+    li { margin: 5px 0; }
+    .contact-item { margin: 13px 0; overflow-wrap: anywhere; }
+    .contact-item strong { display: block; font-size: .78rem; text-transform: uppercase; letter-spacing: .09em; color: var(--muted); }
+    .contact-item a { color: var(--navy-2); text-decoration-thickness: 1px; text-underline-offset: 3px; }
+    .download-card { background: var(--soft); border-radius: 14px; padding: 18px; }
+    .download-card p { margin: 5px 0 15px; font-size: .92rem; }
+    .btn-navy { background: var(--navy); color: white; width: 100%; }
+    footer { padding: 22px 0 30px; text-align: center; color: var(--muted); font-size: .84rem; }
+    .note { font-size: .83rem; color: var(--muted); margin-top: 15px; }
+    @media (max-width: 760px) {
+      .navlinks { gap: 11px; }
+      .navlinks a { font-size: .82rem; }
+      .hero { padding-top: 50px; }
+      .layout { grid-template-columns: 1fr; }
+      .card { padding: 22px; }
+      main { margin-top: -28px; }
+    }
+    @media (max-width: 440px) {
+      nav { align-items: flex-start; flex-direction: column; }
+      .navlinks { gap: 13px; }
+      .hero p { font-size: 1rem; }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="wrap">
+      <nav aria-label="Main navigation">
+        <div class="brand">MM<span style="color:#9fd1e7">.</span> PORTFOLIO</div>
+        <div class="navlinks">
+          <a href="#about">About</a>
+          <a href="#education">Education</a>
+          <a href="#skills">Skills</a>
+          <a href="#projects">Projects</a>
+          <a href="#contact">Contact</a>
+        </div>
+      </nav>
+      <section class="hero" id="about">
+        <div class="eyebrow">Civil Engineering Student</div>
+        <h1>Mark Daniel<br>M. Medina</h1>
+        <p>Third-year Civil Engineering student interested in building design, technical drafting, and building information modeling (BIM). Focused on developing practical skills through academic projects and continuous learning.</p>
+        <div class="actions">
+          <a class="btn btn-light" href="resume.pdf" download>Download Resume PDF ↓</a>
+          <a class="btn btn-outline" href="#projects">View Academic Projects</a>
+        </div>
+      </section>
+    </div>
+  </header>
+
+  <main class="wrap">
+    <div class="layout">
+      <div>
+        <section class="card" id="education">
+          <h2 class="section-title">Education</h2>
+          <div class="school">Garcia College of Technology</div>
+          <div>Bachelor of Science in Civil Engineering</div>
+          <p class="muted">Third Year · Expected Graduation: 2028</p>
+          <p>Building a foundation in civil engineering concepts while developing drafting and modeling skills through academic work.</p>
+        </section>
+
+        <section class="card" id="skills">
+          <h2 class="section-title">Technical Skills</h2>
+          <div class="taglist">
+            <span class="tag">AutoCAD</span>
+            <span class="tag">Revit</span>
+            <span class="tag">SketchUp</span>
+            <span class="tag">Technical Drafting</span>
+            <span class="tag">Building Modeling</span>
+            <span class="tag">BIM Fundamentals</span>
+          </div>
+          <p class="note">Software-related descriptions are presented as foundational skills. Update this section as your experience grows.</p>
+        </section>
+
+        <section class="card" id="projects">
+          <h2 class="section-title">Academic Projects</h2>
+          <article class="project">
+            <h3>Two-Storey Residential Building Model</h3>
+            <p class="muted">Academic building-modeling project</p>
+            <ul>
+              <li>Worked on a residential building layout and 3D building model.</li>
+              <li>Explored building presentation and design coordination using modeling software.</li>
+            </ul>
+          </article>
+          <article class="project">
+            <h3>Residential Plumbing Layout &amp; Water Supply Design</h3>
+            <p class="muted">Academic plumbing-design project</p>
+            <ul>
+              <li>Worked on a residential plumbing layout featuring water-supply piping and plumbing fixtures.</li>
+              <li>Explored coordination of plumbing components within a residential building model.</li>
+            </ul>
+          </article>
+          <p class="note">Keep only project descriptions that accurately reflect work you have completed or contributed to.</p>
+        </section>
+
+        <section class="card">
+          <h2 class="section-title">Career Objective</h2>
+          <p>To build a career in civil engineering by improving technical drafting, building modeling, and design skills while gaining practical experience through future internships and engineering projects.</p>
+        </section>
+      </div>
+
+      <aside>
+        <section class="card" id="contact">
+          <h2 class="section-title">Contact</h2>
+          <div class="contact-item">
+            <strong>Email</strong>
+            <a href="mailto:markdanielmedina52@gmail.com">markdanielmedina52@gmail.com</a>
+          </div>
+          <div class="contact-item">
+            <strong>Phone</strong>
+            <a href="tel:09917571296">09917571296</a>
+          </div>
+          <div class="contact-item">
+            <strong>Location</strong>
+            <span class="muted">Add city/province if you want it displayed publicly.</span>
+          </div>
+        </section>
+
+        <section class="card">
+          <h2 class="section-title">Resume PDF</h2>
+          <div class="download-card">
+            <strong>Download a copy</strong>
+            <p class="muted">A one-page resume with education, technical skills, and academic projects.</p>
+            <a class="btn btn-navy" href="resume.pdf" download>Download PDF</a>
+          </div>
+        </section>
+
+        <section class="card">
+          <h2 class="section-title">Profile</h2>
+          <p>Currently focused on developing skills relevant to residential building modeling, drafting, and plumbing layout projects.</p>
+          <p class="muted" style="font-size:.88rem">Professional references and additional project samples can be added when available.</p>
+        </section>
+      </aside>
+    </div>
+  </main>
+
+  <footer>
+    <div class="wrap">© <span id="year">2026</span> Mark Daniel M. Medina · Personal resume website</div>
+  </footer>
+</body>
+</html>
